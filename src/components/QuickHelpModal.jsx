@@ -81,7 +81,7 @@ export function QuickHelpModal({ isOpen, onClose }) {
               Welcome to KeepGreen
             </h3>
             <p className="text-xs font-semibold text-emerald-800/80 dark:text-emerald-300/80">
-              Your Smart Watering & Plant Care Assistant.
+              Smart Watering & Plant Care Assistant.
             </p>
             <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
               KeepGreen helps you track, water, and care for your indoor and outdoor plants with a clean, mobile-first interface saved directly to your device.
