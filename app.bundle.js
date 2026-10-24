@@ -5480,7 +5480,7 @@ function PlantCard({ plant, onWater, onEdit, onDelete, viewMode = 'comfortable' 
   if (viewMode === 'list') {
     return (
       <div
-        className={`relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-zinc-900 rounded-xl p-3 sm:px-4 sm:py-2.5 transition-all duration-200 hover:shadow-md ${cardBorderClass}`}
+        className={`relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-zinc-900 rounded-xl p-3 sm:px-4 sm:py-2.5 transition-all duration-200 hover:shadow-md w-full max-w-full overflow-hidden ${cardBorderClass}`}
       >
         {/* Left: Avatar + Title & Location */}
         <div className="flex items-center gap-3 min-w-0 flex-1">
@@ -5636,7 +5636,7 @@ function PlantCard({ plant, onWater, onEdit, onDelete, viewMode = 'comfortable' 
   if (viewMode === 'compact') {
     return (
       <div
-        className={`relative flex flex-col justify-between bg-white dark:bg-zinc-900 rounded-2xl p-3 sm:p-3.5 transition-all duration-300 hover:shadow-md ${cardBorderClass}`}
+        className={`relative flex flex-col justify-between bg-white dark:bg-zinc-900 rounded-2xl p-3 sm:p-3.5 transition-all duration-300 hover:shadow-md w-full max-w-full overflow-hidden ${cardBorderClass}`}
       >
         <div>
           {/* Top Row: Square Thumbnail + Plant Details */}
@@ -5821,7 +5821,7 @@ function PlantCard({ plant, onWater, onEdit, onDelete, viewMode = 'comfortable' 
   // ==========================================
   return (
     <div
-      className={`relative flex flex-col justify-between bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:shadow-lg ${cardBorderClass}`}
+      className={`relative flex flex-col justify-between bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:shadow-lg w-full max-w-full overflow-hidden ${cardBorderClass}`}
     >
       <div>
         {/* Plant Image Header with Status Badge Overlay */}
@@ -6509,12 +6509,12 @@ function AddPlantModal({ isOpen, onClose, onAdd, existingPlants = [] }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-zinc-950/70 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-zinc-950/70 backdrop-blur-sm animate-fade-in w-full max-w-full overflow-x-hidden"
       role="dialog"
       aria-modal="true"
       aria-labelledby="add-plant-title"
     >
-      <div className="relative w-full md:max-w-xl bg-white dark:bg-zinc-900 rounded-t-3xl md:rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col max-h-[92vh] md:max-h-[85vh] animate-slide-up md:animate-fade-in">
+      <div className="relative w-full max-w-full md:max-w-xl bg-white dark:bg-zinc-900 rounded-t-3xl md:rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col max-h-[92vh] md:max-h-[85vh] animate-slide-up md:animate-fade-in">
         {/* Mobile Drag Handle */}
         <div className="w-12 h-1.5 bg-zinc-300 dark:bg-zinc-700 rounded-full mx-auto my-2 md:hidden shrink-0" />
 
@@ -6679,7 +6679,7 @@ function AddPlantModal({ isOpen, onClose, onAdd, existingPlants = [] }) {
 
                   {/* Category Filter Pills (Horizontal scroll, zero-vertical bloat) */}
                   <div
-                    className="flex items-center gap-1.5 overflow-x-auto py-1 mb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    className="w-full max-w-full min-w-0 flex items-center gap-1.5 overflow-x-auto py-1 mb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                     style={{ WebkitOverflowScrolling: 'touch' }}
                   >
                     {CATEGORY_PILLS.map((cat) => {
@@ -7596,12 +7596,12 @@ function EditPlantModal({ isOpen, plant, onClose, onSave }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-zinc-950/70 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-zinc-950/70 backdrop-blur-sm animate-fade-in w-full max-w-full overflow-x-hidden"
       role="dialog"
       aria-modal="true"
       aria-labelledby="edit-plant-title"
     >
-      <div className="relative w-full md:max-w-xl bg-white dark:bg-zinc-900 rounded-t-3xl md:rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col max-h-[92vh] md:max-h-[85vh] animate-slide-up md:animate-fade-in">
+      <div className="relative w-full max-w-full md:max-w-xl bg-white dark:bg-zinc-900 rounded-t-3xl md:rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col max-h-[92vh] md:max-h-[85vh] animate-slide-up md:animate-fade-in">
         {/* Mobile Drag Handle */}
         <div className="w-12 h-1.5 bg-zinc-300 dark:bg-zinc-700 rounded-full mx-auto my-2.5 md:hidden shrink-0" />
 
@@ -8281,12 +8281,12 @@ function QuickHelpModal({ isOpen, onClose }) {
   return (
     <div
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-zinc-950/70 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-zinc-950/70 backdrop-blur-sm animate-fade-in w-full max-w-full overflow-x-hidden"
       role="dialog"
       aria-modal="true"
       aria-labelledby="quick-help-title"
     >
-      <div className="relative w-full md:max-w-xl bg-white dark:bg-zinc-900 rounded-t-3xl md:rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col max-h-[90vh] md:max-h-[85vh] animate-slide-up md:animate-fade-in">
+      <div className="relative w-full max-w-full md:max-w-xl bg-white dark:bg-zinc-900 rounded-t-3xl md:rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col max-h-[90vh] md:max-h-[85vh] animate-slide-up md:animate-fade-in">
         {/* Mobile Drag Handle */}
         <div className="w-12 h-1.5 bg-zinc-300 dark:bg-zinc-700 rounded-full mx-auto my-2 md:hidden shrink-0" />
 
@@ -8629,12 +8629,12 @@ ${comments.trim() || '(No comments provided)'}`;
   return (
     <div
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-zinc-950/70 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-zinc-950/70 backdrop-blur-sm animate-fade-in w-full max-w-full overflow-x-hidden"
       role="dialog"
       aria-modal="true"
       aria-labelledby="feedback-dialog-title"
     >
-      <div className="relative w-full md:max-w-lg bg-white dark:bg-zinc-900 rounded-t-3xl md:rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col max-h-[92vh] md:max-h-[85vh] animate-slide-up md:animate-fade-in">
+      <div className="relative w-full max-w-full md:max-w-lg bg-white dark:bg-zinc-900 rounded-t-3xl md:rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col max-h-[92vh] md:max-h-[85vh] animate-slide-up md:animate-fade-in">
         {/* Mobile Drag Handle */}
         <div className="w-12 h-1.5 bg-zinc-300 dark:bg-zinc-700 rounded-full mx-auto my-2 md:hidden shrink-0" />
 
@@ -9029,37 +9029,37 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-50/50 via-zinc-50 to-emerald-50/30 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col font-sans">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-gradient-to-b from-emerald-50/50 via-zinc-50 to-emerald-50/30 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col font-sans relative">
       {/* Top Navigation Bar */}
-      <header className="sticky top-0 z-40 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl shadow-md shadow-emerald-500/20">
-              <Sprout className="w-6 h-6" />
+      <header className="sticky top-0 z-40 w-full max-w-full overflow-x-hidden bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800">
+        <div className="max-w-6xl mx-auto px-3.5 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-2 w-full min-w-0">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1 overflow-hidden">
+            <div className="p-2 sm:p-2.5 bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl shadow-md shadow-emerald-500/20 shrink-0">
+              <Sprout className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-700 via-teal-700 to-emerald-600 dark:from-emerald-400 dark:to-teal-300 bg-clip-text text-transparent">
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+                <h1 className="text-lg sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-700 via-teal-700 to-emerald-600 dark:from-emerald-400 dark:to-teal-300 bg-clip-text text-transparent truncate">
                   KeepGreen
                 </h1>
-                <span className="text-xs bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 rounded-full px-2 py-0.5 font-medium">
+                <span className="text-[10px] sm:text-xs bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 rounded-full px-2 py-0.5 font-medium shrink-0">
                   v0.01 (alpha)
                 </span>
               </div>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400">
+              <p className="text-[11px] sm:text-xs text-zinc-500 dark:text-zinc-400 truncate max-w-[180px] sm:max-w-none">
                 Your Smart Watering & Plant Care Assistant
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Quick Guide / Help Icon Button */}
             <button
               type="button"
               onClick={() => setIsHelpOpen(true)}
               title="Help Guide"
               aria-label="Help Guide"
-              className="p-2 sm:px-3 sm:py-2 flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 transition shadow-sm"
+              className="p-2 sm:px-3 sm:py-2 flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 transition shadow-sm shrink-0"
             >
               <HelpCircle className="w-4 h-4" />
               <span className="hidden sm:inline font-semibold">Guide</span>
@@ -9071,7 +9071,7 @@ function App() {
               onClick={() => setIsFeedbackOpen(true)}
               title="Send Feedback"
               aria-label="Send Feedback"
-              className="p-2 sm:px-3 sm:py-2 flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 transition shadow-sm"
+              className="p-2 sm:px-3 sm:py-2 flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 transition shadow-sm shrink-0"
             >
               <MessageSquare className="w-4 h-4" />
               <span className="hidden sm:inline font-semibold">Feedback</span>
@@ -9080,7 +9080,7 @@ function App() {
             {/* Prominent "+ Add Plant" Button */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-xs sm:text-sm font-semibold rounded-xl shadow-md shadow-emerald-600/25 transition-all"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-xs sm:text-sm font-semibold rounded-xl shadow-md shadow-emerald-600/25 transition-all shrink-0"
             >
               <Plus className="w-4 h-4 stroke-[3]" />
               <span>Add Plant</span>
@@ -9090,107 +9090,109 @@ function App() {
       </header>
 
       {/* Main Content Area */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex-1 w-full space-y-6">
+      <main className="max-w-6xl mx-auto px-3.5 sm:px-6 py-4 sm:py-8 flex-1 w-full max-w-full overflow-x-hidden min-w-0 space-y-4 sm:space-y-6">
         {/* Status Metrics Banner */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <div className="bg-white dark:bg-zinc-900 p-4 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 shadow-sm flex items-center gap-3">
-            <div className="p-2.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 rounded-xl">
-              <Droplets className="w-5 h-5" />
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 w-full max-w-full">
+          <div className="bg-white dark:bg-zinc-900 p-3 sm:p-4 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 shadow-sm flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="p-2 sm:p-2.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 rounded-xl shrink-0">
+              <Droplets className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <p className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Total Plants</p>
-              <p className="text-2xl font-black text-zinc-900 dark:text-zinc-100">{stats.total}</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-[10px] sm:text-xs font-semibold text-zinc-400 uppercase tracking-wider truncate">Total Plants</p>
+              <p className="text-xl sm:text-2xl font-black text-zinc-900 dark:text-zinc-100 leading-tight">{stats.total}</p>
             </div>
           </div>
 
           <button
             onClick={() => setActiveFilter(activeFilter === 'danger' ? 'all' : 'danger')}
-            className={`p-4 rounded-2xl border text-left flex items-center gap-3 transition-all ${
+            className={`p-3 sm:p-4 rounded-2xl border text-left flex items-center gap-2.5 sm:gap-3 transition-all min-w-0 ${
               activeFilter === 'danger'
                 ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800 ring-2 ring-rose-400'
                 : 'bg-white dark:bg-zinc-900 border-zinc-200/80 dark:border-zinc-800 hover:border-rose-200'
             }`}
           >
-            <div className="p-2.5 bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 rounded-xl relative">
-              <AlertCircle className="w-5 h-5" />
+            <div className="p-2 sm:p-2.5 bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 rounded-xl relative shrink-0">
+              <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5" />
               {stats.danger > 0 && (
                 <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-rose-500 rounded-full animate-ping" />
               )}
             </div>
-            <div>
-              <p className="text-xs font-semibold text-rose-600 dark:text-rose-400 uppercase tracking-wider">Needs Water</p>
-              <p className="text-2xl font-black text-rose-600 dark:text-rose-400">{stats.danger}</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-[10px] sm:text-xs font-semibold text-rose-600 dark:text-rose-400 uppercase tracking-wider truncate">Needs Water</p>
+              <p className="text-xl sm:text-2xl font-black text-rose-600 dark:text-rose-400 leading-tight">{stats.danger}</p>
             </div>
           </button>
 
           <button
             onClick={() => setActiveFilter(activeFilter === 'warning' ? 'all' : 'warning')}
-            className={`p-4 rounded-2xl border text-left flex items-center gap-3 transition-all ${
+            className={`p-3 sm:p-4 rounded-2xl border text-left flex items-center gap-2.5 sm:gap-3 transition-all min-w-0 ${
               activeFilter === 'warning'
                 ? 'bg-amber-50 dark:bg-amber-950/40 border-amber-300 dark:border-amber-800 ring-2 ring-amber-400'
                 : 'bg-white dark:bg-zinc-900 border-zinc-200/80 dark:border-zinc-800 hover:border-amber-200'
             }`}
           >
-            <div className="p-2.5 bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 rounded-xl">
-              <AlertTriangle className="w-5 h-5" />
+            <div className="p-2 sm:p-2.5 bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 rounded-xl shrink-0">
+              <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wider">Due Soon</p>
-              <p className="text-2xl font-black text-amber-600 dark:text-amber-400">{stats.warning}</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-[10px] sm:text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wider truncate">Due Soon</p>
+              <p className="text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-400 leading-tight">{stats.warning}</p>
             </div>
           </button>
 
           <button
             onClick={() => setActiveFilter(activeFilter === 'healthy' ? 'all' : 'healthy')}
-            className={`p-4 rounded-2xl border text-left flex items-center gap-3 transition-all ${
+            className={`p-3 sm:p-4 rounded-2xl border text-left flex items-center gap-2.5 sm:gap-3 transition-all min-w-0 ${
               activeFilter === 'healthy'
                 ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 ring-2 ring-emerald-400'
                 : 'bg-white dark:bg-zinc-900 border-zinc-200/80 dark:border-zinc-800 hover:border-emerald-200'
             }`}
           >
-            <div className="p-2.5 bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 rounded-xl">
-              <CheckCircle2 className="w-5 h-5" />
+            <div className="p-2 sm:p-2.5 bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 rounded-xl shrink-0">
+              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">Healthy</p>
-              <p className="text-2xl font-black text-emerald-600 dark:text-emerald-400">{stats.healthy}</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-[10px] sm:text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider truncate">Healthy</p>
+              <p className="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400 leading-tight">{stats.healthy}</p>
             </div>
           </button>
         </div>
 
         {/* Filter Bar, Room Filter & View Mode Controls */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
-          {/* Quick status tabs */}
-          <div className="flex items-center gap-1.5 p-1 bg-zinc-200/60 dark:bg-zinc-800/60 rounded-xl w-fit overflow-x-auto">
-            {[
-              { id: 'all', label: 'All Plants' },
-              { id: 'danger', label: 'Needs Water' },
-              { id: 'warning', label: 'Due Soon' },
-              { id: 'healthy', label: 'Healthy' }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveFilter(tab.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition shrink-0 ${
-                  activeFilter === tab.id
-                    ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-sm'
-                    : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1 w-full max-w-full min-w-0">
+          {/* Quick status tabs (Locked with overflow scroll, zero push) */}
+          <div className="w-full sm:w-auto overflow-x-auto max-w-full min-w-0 pb-1 sm:pb-0 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div className="flex items-center gap-1.5 p-1 bg-zinc-200/60 dark:bg-zinc-800/60 rounded-xl w-max">
+              {[
+                { id: 'all', label: 'All Plants' },
+                { id: 'danger', label: 'Needs Water' },
+                { id: 'warning', label: 'Due Soon' },
+                { id: 'healthy', label: 'Healthy' }
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveFilter(tab.id)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition shrink-0 ${
+                    activeFilter === tab.id
+                      ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-sm'
+                      : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap max-w-full min-w-0">
             {/* Room filter dropdown */}
             {uniqueRooms.length > 0 && (
-              <div className="flex items-center gap-1.5 text-xs text-zinc-500">
+              <div className="flex items-center gap-1.5 text-xs text-zinc-500 shrink-0">
                 <span className="font-medium">Room:</span>
                 <select
                   value={selectedRoom}
                   onChange={(e) => setSelectedRoom(e.target.value)}
-                  className="px-2.5 py-1.5 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl text-xs font-medium text-zinc-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="px-2.5 py-1.5 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl text-xs font-medium text-zinc-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 max-w-[130px] sm:max-w-none truncate cursor-pointer"
                 >
                   <option value="all">All Rooms ({plants.length})</option>
                   {uniqueRooms.map((room) => (
@@ -9202,8 +9204,8 @@ function App() {
               </div>
             )}
 
-            {/* Sort Control Dropdown (Positioned immediately to the left of view mode toggles) */}
-            <div className="flex items-center gap-1.5 text-xs text-zinc-500">
+            {/* Sort Control Dropdown */}
+            <div className="flex items-center gap-1.5 text-xs text-zinc-500 shrink-0">
               <span className="font-medium text-xs text-zinc-500 dark:text-zinc-400">Sort:</span>
               <div className="relative flex items-center">
                 <div className="absolute left-2.5 pointer-events-none text-zinc-400">
@@ -9213,7 +9215,7 @@ function App() {
                   value={sortBy}
                   onChange={(e) => handleSortChange(e.target.value)}
                   aria-label="Sort plants"
-                  className="pl-8 pr-7 py-1.5 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl text-xs font-medium text-zinc-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm appearance-none cursor-pointer"
+                  className="pl-8 pr-7 py-1.5 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl text-xs font-medium text-zinc-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm appearance-none cursor-pointer max-w-[150px] sm:max-w-none truncate"
                 >
                   <option value="urgency">Needs Water First</option>
                   <option value="name-asc">Alphabetical (A to Z)</option>
@@ -9229,7 +9231,7 @@ function App() {
 
             {/* View Mode Segmented Controls */}
             <div
-              className="flex items-center p-1 bg-zinc-200/60 dark:bg-zinc-800/60 rounded-xl shadow-inner"
+              className="flex items-center p-1 bg-zinc-200/60 dark:bg-zinc-800/60 rounded-xl shadow-inner shrink-0"
               role="group"
               aria-label="View Density"
             >

@@ -481,12 +481,12 @@ export function AddPlantModal({ isOpen, onClose, onAdd, existingPlants = [] }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-zinc-950/70 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 bg-zinc-950/70 backdrop-blur-sm animate-fade-in w-full max-w-full overflow-x-hidden"
       role="dialog"
       aria-modal="true"
       aria-labelledby="add-plant-title"
     >
-      <div className="relative w-full md:max-w-xl bg-white dark:bg-zinc-900 rounded-t-3xl md:rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col max-h-[92vh] md:max-h-[85vh] animate-slide-up md:animate-fade-in">
+      <div className="relative w-full max-w-full md:max-w-xl bg-white dark:bg-zinc-900 rounded-t-3xl md:rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col max-h-[92vh] md:max-h-[85vh] animate-slide-up md:animate-fade-in">
         {/* Mobile Drag Handle */}
         <div className="w-12 h-1.5 bg-zinc-300 dark:bg-zinc-700 rounded-full mx-auto my-2 md:hidden shrink-0" />
 
@@ -651,7 +651,7 @@ export function AddPlantModal({ isOpen, onClose, onAdd, existingPlants = [] }) {
 
                   {/* Category Filter Pills (Horizontal scroll, zero-vertical bloat) */}
                   <div
-                    className="flex items-center gap-1.5 overflow-x-auto py-1 mb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    className="w-full max-w-full min-w-0 flex items-center gap-1.5 overflow-x-auto py-1 mb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                     style={{ WebkitOverflowScrolling: 'touch' }}
                   >
                     {CATEGORY_PILLS.map((cat) => {

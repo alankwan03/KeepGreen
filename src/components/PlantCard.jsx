@@ -96,7 +96,7 @@ export function PlantCard({ plant, onWater, onEdit, onDelete, viewMode = 'comfor
   if (viewMode === 'list') {
     return (
       <div
-        className={`relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-zinc-900 rounded-xl p-3 sm:px-4 sm:py-2.5 transition-all duration-200 hover:shadow-md ${cardBorderClass}`}
+        className={`relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-zinc-900 rounded-xl p-3 sm:px-4 sm:py-2.5 transition-all duration-200 hover:shadow-md w-full max-w-full overflow-hidden ${cardBorderClass}`}
       >
         {/* Left: Avatar + Title & Location */}
         <div className="flex items-center gap-3 min-w-0 flex-1">
@@ -252,7 +252,7 @@ export function PlantCard({ plant, onWater, onEdit, onDelete, viewMode = 'comfor
   if (viewMode === 'compact') {
     return (
       <div
-        className={`relative flex flex-col justify-between bg-white dark:bg-zinc-900 rounded-2xl p-3 sm:p-3.5 transition-all duration-300 hover:shadow-md ${cardBorderClass}`}
+        className={`relative flex flex-col justify-between bg-white dark:bg-zinc-900 rounded-2xl p-3 sm:p-3.5 transition-all duration-300 hover:shadow-md w-full max-w-full overflow-hidden ${cardBorderClass}`}
       >
         <div>
           {/* Top Row: Square Thumbnail + Plant Details */}
@@ -437,7 +437,7 @@ export function PlantCard({ plant, onWater, onEdit, onDelete, viewMode = 'comfor
   // ==========================================
   return (
     <div
-      className={`relative flex flex-col justify-between bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:shadow-lg ${cardBorderClass}`}
+      className={`relative flex flex-col justify-between bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:shadow-lg w-full max-w-full overflow-hidden ${cardBorderClass}`}
     >
       <div>
         {/* Plant Image Header with Status Badge Overlay */}

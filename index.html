@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="w-full max-w-full overflow-x-hidden">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>KeepGreen - Plant Care & Watering Assistant</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23059669' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m7 20 5-10m0 0 5 10m-5-10v10'/><path d='M12 10a5 5 0 0 0-5-5H5v2a5 5 0 0 0 5 5'/><path d='M12 7a5 5 0 0 1 5-5h2v2a5 5 0 0 1-5 5'/></svg>" />
+
+  <!-- Global Viewport & Overflow Locks -->
+  <style>
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      position: relative;
+      touch-action: pan-y;
+      -webkit-text-size-adjust: 100%;
+    }
+    #root {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+  </style>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,8 +64,8 @@
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
 </head>
-<body class="bg-zinc-50 text-zinc-900 antialiased selection:bg-emerald-500 selection:text-white">
-  <div id="root"></div>
+<body class="bg-zinc-50 text-zinc-900 antialiased selection:bg-emerald-500 selection:text-white w-full max-w-full overflow-x-hidden min-h-screen">
+  <div id="root" class="w-full max-w-full overflow-x-hidden min-h-screen"></div>
 
   <!-- Application Bundle -->
   <script type="text/babel" src="./app.bundle.js"></script>
