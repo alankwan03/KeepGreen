@@ -9032,37 +9032,34 @@ function App() {
     <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-gradient-to-b from-emerald-50/50 via-zinc-50 to-emerald-50/30 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col font-sans relative">
       {/* Top Navigation Bar */}
       <header className="sticky top-0 z-40 w-full max-w-full overflow-x-hidden bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800">
-        <div className="max-w-6xl mx-auto px-3.5 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-2 w-full min-w-0">
-          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1 overflow-hidden">
-            <div className="p-2 sm:p-2.5 bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl shadow-md shadow-emerald-500/20 shrink-0">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-2 w-full min-w-0">
+          {/* Brand & Identity: Title + Tagline with min-w-0 flex-1 */}
+          <div className="flex items-center gap-2 sm:gap-2.5 min-w-0 flex-1 mr-2">
+            <div className="p-1.5 sm:p-2 bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-xl sm:rounded-2xl shadow-md shadow-emerald-500/20 shrink-0">
               <Sprout className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
-                <h1 className="text-lg sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-700 via-teal-700 to-emerald-600 dark:from-emerald-400 dark:to-teal-300 bg-clip-text text-transparent truncate">
-                  KeepGreen
-                </h1>
-                <span className="text-[10px] sm:text-xs bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 rounded-full px-2 py-0.5 font-medium shrink-0">
-                  v0.01 (alpha)
-                </span>
-              </div>
-              <p className="text-[11px] sm:text-xs text-zinc-500 dark:text-zinc-400 truncate max-w-[180px] sm:max-w-none">
+            <div className="min-w-0">
+              <h1 className="text-base sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-700 via-teal-700 to-emerald-600 dark:from-emerald-400 dark:to-teal-300 bg-clip-text text-transparent whitespace-nowrap leading-tight">
+                KeepGreen
+              </h1>
+              <p className="text-[10px] sm:text-xs text-zinc-500 dark:text-zinc-400 truncate leading-tight font-medium">
                 Your Smart Watering & Plant Care Assistant
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          {/* Action Button Group: Strictly shrink-0 so buttons are never clipped */}
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
             {/* Quick Guide / Help Icon Button */}
             <button
               type="button"
               onClick={() => setIsHelpOpen(true)}
               title="Help Guide"
               aria-label="Help Guide"
-              className="p-2 sm:px-3 sm:py-2 flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 transition shadow-sm shrink-0"
+              className="p-2 sm:px-3 sm:py-2 flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 transition shadow-sm shrink-0 min-w-[36px] min-h-[36px] justify-center"
             >
-              <HelpCircle className="w-4 h-4" />
-              <span className="hidden sm:inline font-semibold">Guide</span>
+              <HelpCircle className="w-4 h-4 shrink-0" />
+              <span className="hidden md:inline font-semibold">Guide</span>
             </button>
 
             {/* Feedback & Suggestions Icon Button */}
@@ -9071,18 +9068,19 @@ function App() {
               onClick={() => setIsFeedbackOpen(true)}
               title="Send Feedback"
               aria-label="Send Feedback"
-              className="p-2 sm:px-3 sm:py-2 flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 transition shadow-sm shrink-0"
+              className="p-2 sm:px-3 sm:py-2 flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 transition shadow-sm shrink-0 min-w-[36px] min-h-[36px] justify-center"
             >
-              <MessageSquare className="w-4 h-4" />
-              <span className="hidden sm:inline font-semibold">Feedback</span>
+              <MessageSquare className="w-4 h-4 shrink-0" />
+              <span className="hidden md:inline font-semibold">Feedback</span>
             </button>
 
             {/* Prominent "+ Add Plant" Button */}
             <button
+              type="button"
               onClick={() => setIsModalOpen(true)}
-              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-xs sm:text-sm font-semibold rounded-xl shadow-md shadow-emerald-600/25 transition-all shrink-0"
+              className="flex items-center justify-center gap-1 sm:gap-2 px-2.5 sm:px-4 py-2 sm:py-2.5 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-xs sm:text-sm font-semibold rounded-xl shadow-md shadow-emerald-600/25 transition-all shrink-0 min-h-[36px] whitespace-nowrap"
             >
-              <Plus className="w-4 h-4 stroke-[3]" />
+              <Plus className="w-4 h-4 stroke-[3] shrink-0" />
               <span>Add Plant</span>
             </button>
           </div>
@@ -9351,11 +9349,11 @@ function App() {
       {/* Beginner Quick Guide Footer */}
       <footer className="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 mt-auto py-6">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 text-center sm:text-left">
             <span className="font-semibold text-zinc-700 dark:text-zinc-300">Novice Care Rule of Thumb:</span>
             <span>When in doubt, stick your finger 1 inch into the soil. If dry, water thoroughly.</span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Healthy
             </span>
@@ -9364,6 +9362,10 @@ function App() {
             </span>
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-rose-500"></span> Water Needed
+            </span>
+            <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">•</span>
+            <span className="text-[11px] text-zinc-400 dark:text-zinc-500 font-medium whitespace-nowrap bg-zinc-100 dark:bg-zinc-800/80 px-2 py-0.5 rounded-full border border-zinc-200/60 dark:border-zinc-700/60">
+              v0.01 (alpha)
             </span>
           </div>
         </div>
