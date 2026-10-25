@@ -8,7 +8,7 @@ export function getRelativeDate(daysAgo) {
 }
 
 export const VERSION_KEY = 'keepgreen_data_version';
-export const CURRENT_VERSION = '0.01-alpha-4';
+export const CURRENT_VERSION = '0.2-alpha-1';
 export const STORAGE_KEY = 'keepgreen_plants';
 
 export const INITIAL_PLANTS = [

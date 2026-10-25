@@ -9,7 +9,8 @@ import {
   LayoutGrid,
   ArrowUpDown,
   MessageSquare,
-  Calendar
+  Calendar,
+  Sparkles
 } from './Icons.jsx';
 
 const { useEffect } = window.React || React;
@@ -217,6 +218,19 @@ export function QuickHelpModal({ isOpen, onClose }) {
             </ul>
           </div>
 
+          {/* About the Developer Block */}
+          <div className="p-4 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/40 space-y-1.5">
+            <div className="flex items-center gap-2 font-bold text-emerald-900 dark:text-emerald-200 text-xs sm:text-sm">
+              <span className="p-1.5 bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 rounded-lg">
+                <Sparkles className="w-4 h-4" />
+              </span>
+              <span>About the Developer</span>
+            </div>
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Built and maintained by <strong className="text-black font-medium">AK Professional Services</strong>. Feedback, feature suggestions, and testing notes are welcome.
+            </p>
+          </div>
+
           {/* Note Banner */}
           <div className="p-3 rounded-xl bg-zinc-100 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700/60 text-[11px] text-zinc-500 dark:text-zinc-400 italic text-center">
             Note: KeepGreen stores all your garden data locally in your browser's localStorage. No accounts or passwords needed.
@@ -233,7 +247,9 @@ export function QuickHelpModal({ isOpen, onClose }) {
             <Check className="w-4 h-4 stroke-[3]" />
             <span>Got it!</span>
           </button>
-          <span className="text-[11px] text-zinc-400 font-medium">KeepGreen v0.01 (alpha)</span>
+          <span className="text-[11px] text-zinc-400 font-medium">
+            KeepGreen v0.2 (alpha) • <span className="text-black font-medium">AK Professional Services</span>
+          </span>
         </div>
       </div>
     </div>

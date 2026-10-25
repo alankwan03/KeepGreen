@@ -16,7 +16,7 @@ function getRelativeDate(daysAgo) {
 }
 
 const VERSION_KEY = 'keepgreen_data_version';
-const CURRENT_VERSION = '0.01-alpha-4';
+const CURRENT_VERSION = '0.2-alpha-1';
 const STORAGE_KEY = 'keepgreen_plants';
 
 const INITIAL_PLANTS = [
@@ -8458,6 +8458,19 @@ function QuickHelpModal({ isOpen, onClose }) {
             </ul>
           </div>
 
+          {/* About the Developer Block */}
+          <div className="p-4 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/40 space-y-1.5">
+            <div className="flex items-center gap-2 font-bold text-emerald-900 dark:text-emerald-200 text-xs sm:text-sm">
+              <span className="p-1.5 bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 rounded-lg">
+                <Sparkles className="w-4 h-4" />
+              </span>
+              <span>About the Developer</span>
+            </div>
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Built and maintained by <strong className="text-black font-medium">AK Professional Services</strong>. Feedback, feature suggestions, and testing notes are welcome.
+            </p>
+          </div>
+
           {/* Note Banner */}
           <div className="p-3 rounded-xl bg-zinc-100 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700/60 text-[11px] text-zinc-500 dark:text-zinc-400 italic text-center">
             Note: KeepGreen stores all your garden data locally in your browser's localStorage. No accounts or passwords needed.
@@ -8474,7 +8487,9 @@ function QuickHelpModal({ isOpen, onClose }) {
             <Check className="w-4 h-4 stroke-[3]" />
             <span>Got it!</span>
           </button>
-          <span className="text-[11px] text-zinc-400 font-medium">KeepGreen v0.01 (alpha)</span>
+          <span className="text-[11px] text-zinc-400 font-medium">
+            KeepGreen v0.2 (alpha) • <span className="text-black font-medium">AK Professional Services</span>
+          </span>
         </div>
       </div>
     </div>
@@ -8484,7 +8499,7 @@ function QuickHelpModal({ isOpen, onClose }) {
 
   
 const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwLp0-Z69a7V9XslyhbNUWKCKhMUU78JLi-k6YjgUSlH6z3K96dYaFm9HAywO3CGIz4/exec';
-const APP_VERSION = 'v0.01 (alpha)';
+const APP_VERSION = 'v0.2 (alpha)';
 
 const CATEGORIES = [
   { id: 'General Comment', label: '✨ General Comment' },
@@ -8818,6 +8833,72 @@ ${comments.trim() || '(No comments provided)'}`;
 }
 
 
+  
+function SplashScreen() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    // Automatically fade out smoothly after exactly 2 seconds (2000ms)
+    const fadeTimer = setTimeout(() => {
+      setIsFading(true);
+    }, 2000);
+
+    // Completely unmount/remove overlay after the 500ms fade completes (total 2550ms)
+    const removeTimer = setTimeout(() => {
+      setIsVisible(false);
+    }, 2550);
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, []);
+
+  if (!isVisible) return null;
+
+  return (
+    <div
+      aria-hidden={isFading}
+      className={`fixed inset-0 z-50 flex flex-col justify-between items-center bg-emerald-950 text-white p-8 transition-opacity duration-500 ${
+        isFading ? 'opacity-0 pointer-events-none' : 'opacity-100'
+      }`}
+    >
+      {/* Top spacer to balance flex-between */}
+      <div className="w-full h-8" />
+
+      {/* Center Brand Identity */}
+      <div className="flex flex-col items-center text-center space-y-4 max-w-xs animate-fade-in">
+        <div className="p-4 sm:p-5 bg-emerald-900/60 border border-emerald-500/30 text-emerald-400 rounded-3xl shadow-2xl shadow-emerald-900/80 ring-1 ring-emerald-400/20">
+          <Sprout className="w-14 h-14 sm:w-16 sm:h-16 stroke-[1.75]" />
+        </div>
+        <div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-200 via-teal-100 to-emerald-300 bg-clip-text text-transparent">
+            KeepGreen
+          </h1>
+          <p className="mt-2 text-sm leading-tight text-emerald-200/80 font-medium">
+            <span className="block">Smart Watering &amp;</span>
+            <span className="block">Plant Care Assistant</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom Content: Minimalist spinner + Attribution */}
+      <div className="flex flex-col items-center space-y-3 pb-4">
+        {/* Minimalist spinner or subtle pulsing progress indicator */}
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 border-2 border-emerald-400/20 border-t-emerald-400 rounded-full animate-spin"></div>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        </div>
+        <p className="text-xs text-emerald-400/80 font-sans tracking-wide">
+          Developed by AK Professional Services
+        </p>
+      </div>
+    </div>
+  );
+}
+
+
   // --- 6. Main App Component ---
   
 function App() {
@@ -9030,6 +9111,9 @@ function App() {
 
   return (
     <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-gradient-to-b from-emerald-50/50 via-zinc-50 to-emerald-50/30 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col font-sans relative">
+      {/* Sleek Splash Screen Overlay */}
+      <SplashScreen />
+
       {/* Top Navigation Bar */}
       <header className="sticky top-0 z-40 w-full max-w-full overflow-x-hidden bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3 w-full min-w-0">
@@ -9354,7 +9438,7 @@ function App() {
             <span className="font-semibold text-zinc-700 dark:text-zinc-300">Novice Care Rule of Thumb:</span>
             <span>When in doubt, stick your finger 1 inch into the soil. If dry, water thoroughly.</span>
           </div>
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-2.5">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Healthy
             </span>
@@ -9366,7 +9450,11 @@ function App() {
             </span>
             <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">•</span>
             <span className="text-[10px] sm:text-xs text-zinc-400 dark:text-zinc-500 font-medium whitespace-nowrap bg-zinc-100 dark:bg-zinc-800/80 px-2 py-0.5 rounded-full border border-zinc-200/60 dark:border-zinc-700/60">
-              v0.01 (alpha)
+              v0.2 (alpha)
+            </span>
+            <span className="text-zinc-300 dark:text-zinc-700">•</span>
+            <span className="text-[10px] sm:text-xs text-black font-medium whitespace-nowrap">
+              AK Professional Services
             </span>
           </div>
         </div>

@@ -30,6 +30,7 @@ function build() {
   const editPlantModalCode = cleanSource(fs.readFileSync(path.join(__dirname, 'src/components/EditPlantModal.jsx'), 'utf8'));
   const quickHelpModalCode = cleanSource(fs.readFileSync(path.join(__dirname, 'src/components/QuickHelpModal.jsx'), 'utf8'));
   const feedbackModalCode = cleanSource(fs.readFileSync(path.join(__dirname, 'src/components/FeedbackModal.jsx'), 'utf8'));
+  const splashScreenCode = cleanSource(fs.readFileSync(path.join(__dirname, 'src/components/SplashScreen.jsx'), 'utf8'));
   const appCode = cleanSource(fs.readFileSync(path.join(__dirname, 'src/App.jsx'), 'utf8'));
 
   const bundle = `// KeepGreen Bundle - Clean React 18 Architecture
@@ -67,6 +68,8 @@ function build() {
   ${quickHelpModalCode}
 
   ${feedbackModalCode}
+
+  ${splashScreenCode}
 
   // --- 6. Main App Component ---
   ${appCode}

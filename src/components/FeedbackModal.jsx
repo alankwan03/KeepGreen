@@ -12,7 +12,7 @@ import {
 const { useState, useEffect } = window.React || React;
 
 const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwLp0-Z69a7V9XslyhbNUWKCKhMUU78JLi-k6YjgUSlH6z3K96dYaFm9HAywO3CGIz4/exec';
-const APP_VERSION = 'v0.01 (alpha)';
+const APP_VERSION = 'v0.2 (alpha)';
 
 const CATEGORIES = [
   { id: 'General Comment', label: '✨ General Comment' },

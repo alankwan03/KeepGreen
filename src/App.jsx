@@ -7,6 +7,7 @@ import { AddPlantModal } from './components/AddPlantModal.jsx';
 import { EditPlantModal } from './components/EditPlantModal.jsx';
 import { QuickHelpModal } from './components/QuickHelpModal.jsx';
 import { FeedbackModal } from './components/FeedbackModal.jsx';
+import { SplashScreen } from './components/SplashScreen.jsx';
 import {
   Sprout,
   Plus,
@@ -240,6 +241,9 @@ export function App() {
 
   return (
     <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-gradient-to-b from-emerald-50/50 via-zinc-50 to-emerald-50/30 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col font-sans relative">
+      {/* Sleek Splash Screen Overlay */}
+      <SplashScreen />
+
       {/* Top Navigation Bar */}
       <header className="sticky top-0 z-40 w-full max-w-full overflow-x-hidden bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3 w-full min-w-0">
@@ -564,7 +568,7 @@ export function App() {
             <span className="font-semibold text-zinc-700 dark:text-zinc-300">Novice Care Rule of Thumb:</span>
             <span>When in doubt, stick your finger 1 inch into the soil. If dry, water thoroughly.</span>
           </div>
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-2.5">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Healthy
             </span>
@@ -576,7 +580,11 @@ export function App() {
             </span>
             <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">•</span>
             <span className="text-[10px] sm:text-xs text-zinc-400 dark:text-zinc-500 font-medium whitespace-nowrap bg-zinc-100 dark:bg-zinc-800/80 px-2 py-0.5 rounded-full border border-zinc-200/60 dark:border-zinc-700/60">
-              v0.01 (alpha)
+              v0.2 (alpha)
+            </span>
+            <span className="text-zinc-300 dark:text-zinc-700">•</span>
+            <span className="text-[10px] sm:text-xs text-black font-medium whitespace-nowrap">
+              AK Professional Services
             </span>
           </div>
         </div>
